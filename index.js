@@ -3,6 +3,8 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import projectsRoute from './routes/projects-routes.js'
+import errorHandler from './middleware/errorHandler.js';
 
 dotenv.config();
 
@@ -32,3 +34,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
   res.send('Hello world');
 });
+
+app.use('/projects',projectsRoute);
+
+
+app.use(errorHandler);
