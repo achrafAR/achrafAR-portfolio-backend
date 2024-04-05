@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import projectsRoute from './routes/projects-routes.js'
+import projectsRoute from './routes/projects-routes.js';
+import userRoute from './routes/user-routes.js'
 import errorHandler from './middleware/errorHandler.js';
 
 dotenv.config();
@@ -36,6 +37,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/projects',projectsRoute);
+app.use('/user',userRoute);
 
 
 app.use(errorHandler);

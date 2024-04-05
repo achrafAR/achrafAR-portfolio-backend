@@ -16,5 +16,5 @@ router.post('/', upload.single('image'), createProjects);
 // Route to delete Project By Id
 router.delete('/:id',deleteProjectById)
 // Route to update Project By Id
-router.patch('/:id', upload.single('image'), updateProjectById); // Route to update projects by ID (using PUT method)
+router.put('/:id', upload.single('image'), updateProjectById); // Route to update projects by ID (using PUT method)
 export default router;
